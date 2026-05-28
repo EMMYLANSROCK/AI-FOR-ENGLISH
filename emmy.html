@@ -1,0 +1,79 @@
+<script>
+
+// ================= DATABASE =================
+let verbs = {};
+
+// ================= IRREGULAR VERBS =================
+let irregularVerbs = [
+    ["go","went","gone"],
+    ["eat","ate","eaten"],
+    ["see","saw","seen"],
+    ["come","came","come"],
+    ["write","wrote","written"],
+    ["take","took","taken"],
+    ["make","made","made"],
+    ["run","ran","run"],
+    ["drink","drank","drunk"],
+    ["begin","began","begun"],
+    ["give","gave","given"],
+    ["find","found","found"],
+    ["break","broke","broken"],
+    ["choose","chose","chosen"],
+    ["know","knew","known"],
+    ["get","got","gotten"],
+    ["fly","flew","flown"],
+    ["win","won","won"],
+    ["lose","lost","lost"],
+    ["build","built","built"],
+    ["bring","brought","brought"],
+    ["think","thought","thought"],
+    ["teach","taught","taught"],
+    ["catch","caught","caught"],
+    ["buy","bought","bought"],
+    ["sell","sold","sold"],
+    ["meet","met","met"],
+
+    // ➕ NEW 20 IRREGULAR
+    ["bind","bound","bound"],
+    ["flee","fled","fled"],
+    ["grind","ground","ground"],
+    ["sink","sank","sunk"],
+    ["stick","stuck","stuck"]
+];
+
+// Load irregular verbs
+irregularVerbs.forEach(v => {
+    verbs[v[0]] = {
+        base: v[0],
+        past: v[1],
+        pastParticiple: v[2],
+        continuous: v[0] + "ing",
+        type: "irregular"
+    };
+});
+
+// ================= REGULAR VERBS =================
+let regularBase = [
+    "play","work","study","walk","talk","call","clean",
+    "open","close","help","watch","learn","start","finish",
+    "love","like","move","live","drive","cook","buy",
+    "ask","answer","listen","jump","paint",
+    "dance","travel","look","use","stop",
+
+    // ➕ NEW 20 REGULAR
+    "advertise","argue","behave","employ","encourage",
+    "examine","generate","operate","publish","suggest"
+];
+
+// Load regular verbs
+regularBase.forEach(v => {
+    verbs[v] = {
+        base: v,
+        past: v + "ed",
+        pastParticiple: v + "ed",
+        continuous: v + "ing",
+        type: "regular"
+    };
+});
+
+</script>
